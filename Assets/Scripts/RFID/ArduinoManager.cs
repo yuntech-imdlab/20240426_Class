@@ -31,10 +31,11 @@ public class ArduinoManager : MonoBehaviour
 
         Debug.Log(msg);
 
-        var card = cardList.FirstOrDefault(x => x.uuid == msg);
+        var card = cardList.FirstOrDefault(x => x.uuid == msg.Trim());
         if (card is null)
             return;
 
         image.color = card.color;
+        Debug.Log("Change");
     }
 }
